@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    height: 3em;
+    padding: 1em;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    align-items: center;
+}
+
+.logo_img {
+    height: 3em;
+    width: 3em;
+    padding-right: 5px;
+}
+
+.link {
+    color: black;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.right_items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1em;
+}
+
+.line {
+    height: 3em;
+    margin: 0.5em;
+    border: 1px solid black;
+}

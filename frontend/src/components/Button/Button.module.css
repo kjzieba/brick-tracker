@@ -1,0 +1,18 @@
+.button {
+    background-color: #FFB703;
+    color: black;
+    border-radius: 0.3em;
+    padding: 0.5em 2em;
+    margin: 1em;
+    display: flex;
+}
+
+.button:hover {
+    filter: brightness(90%);
+}
+
+.text {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}

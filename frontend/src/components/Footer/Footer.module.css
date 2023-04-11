@@ -1,0 +1,13 @@
+.footer_container {
+    margin: 1em 1em 0.25em;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid;
+    border-color: #6A6A6A;
+}
+
+.link {
+    color: #6A6A6A;
+    padding-left: 1em;
+    padding-right: 1em;
+}
