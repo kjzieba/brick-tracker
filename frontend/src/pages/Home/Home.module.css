@@ -5,6 +5,7 @@
     align-items: center;
     flex-grow: 1;
     gap: 5em;
+    margin-top: 0;
 }
 
 .home {

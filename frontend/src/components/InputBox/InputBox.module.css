@@ -1,0 +1,15 @@
+.input {
+    border: 2px #6A6A6A solid;
+    border-radius: 0.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    width: 12em;
+}
+
+.input:focus-visible {
+    outline: none;
+    border: 2px black solid;
+}

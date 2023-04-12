@@ -1,0 +1,63 @@
+.login {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    align-items: center;
+    margin-bottom: 3em;
+    font-size: x-large;
+}
+
+.logo_img {
+    height: 3em;
+    width: 3em;
+    padding-right: 5px;
+}
+
+.link {
+    color: black;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.label {
+    margin: 0.5em;
+}
+
+.footer {
+    width: 100vw;
+    margin-top: auto;
+}
+
+.recovery {
+    color: #6A6A6A;
+    display: flex;
+    justify-content: flex-end;
+    width: 20em;
+    font-size: small;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_text {
+    margin: 0.5em 0.2em 0.2em;
+}
+
+.login_header {
+    margin: 0.4em 0.2em;
+    font-size: xx-large;
+}
