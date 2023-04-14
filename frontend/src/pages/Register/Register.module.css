@@ -11,7 +11,6 @@
     flex-direction: row;
     color: black;
     align-items: center;
-    margin-bottom: 3em;
     font-size: x-large;
 }
 
@@ -32,7 +31,7 @@
 }
 
 .footer {
-    width: 100vw;
+    width: 100%;
     margin-top: auto;
 }
 
