@@ -1,0 +1,78 @@
+.popup_background {
+    position: fixed;
+    background: #00000050;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+}
+
+.container {
+    position: fixed;
+    top: 5vh;
+    left: 50vw;
+    transform: translate(-50%, 0);
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 3px #FFB703 solid;
+    border-radius: 0.3em;
+    padding: 1em;
+}
+
+.button {
+    background-color: #FFB703;
+    color: black;
+    border: 2px solid #FFB703;
+    border-radius: 0.3em;
+    padding: 0.5em 1.5em;
+    margin-top: 1em;
+    display: flex;
+    width: fit-content;
+}
+
+.button:hover {
+    filter: brightness(90%);
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    border: 2px #6A6A6A solid;
+    border-radius: 0.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    width: 12em;
+}
+
+.input:focus-visible {
+    outline: none;
+    border: 2px black solid;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.input_invalid {
+    border: 2px red solid;
+    border-radius: 0.3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    width: 12em;
+}
