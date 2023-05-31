@@ -17,3 +17,9 @@
 .footer {
     margin-top: auto;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .features {
+        flex-direction: column;
+    }
+}

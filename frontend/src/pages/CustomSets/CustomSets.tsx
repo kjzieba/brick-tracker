@@ -35,6 +35,7 @@ function CustomSets() {
                 <div className={style.container}>
                     <div className={style.grid}>
                         {customSetList && customSetList.map(customSet => <SetCard
+                            key={customSet.customSetId}
                             id={customSet.customSetId} {...customSet}/>)}
                     </div>
                 </div>

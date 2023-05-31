@@ -41,3 +41,9 @@
     margin: 0.5em;
     border: 1px solid black;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .right_items {
+        display: none;
+    }
+}

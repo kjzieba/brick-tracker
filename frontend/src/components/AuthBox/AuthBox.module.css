@@ -7,3 +7,9 @@
     align-items: center;
     margin-bottom: 1em;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .box {
+        min-width: 90vw;
+    }
+}

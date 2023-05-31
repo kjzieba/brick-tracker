@@ -113,3 +113,10 @@
 .td_color {
     max-width: 5em;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .parts_container {
+        height:auto;
+        max-height: 60vh;
+    }
+}

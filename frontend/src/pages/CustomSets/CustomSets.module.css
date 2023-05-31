@@ -25,3 +25,9 @@
     justify-items: center;
     width: fit-content;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

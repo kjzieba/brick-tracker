@@ -24,3 +24,9 @@
 .button {
     width: 23em;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .feature_box {
+        width: 100vw;
+    }
+}

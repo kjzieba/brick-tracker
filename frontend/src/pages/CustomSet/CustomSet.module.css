@@ -82,3 +82,14 @@
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .img_placeholder {
+        width: 100vw;
+        height: 18em;
+    }
+}
