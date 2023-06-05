@@ -15,14 +15,15 @@ type customSetDetails = {
     photo: any,
     instruction: any,
     parts: Part[],
-    creationDate: string
+    creationDate: string,
+    creatorUsername: string
 };
 
 function CustomSet() {
     const {id} = useParams();
     const [customSet, setCustomSet] = useState<customSetDetails>();
     useEffect(() => {
-        fetch(`http://127.0.0.1:8080/custom-sets/${id}`, {
+        fetch(`http://127.0.0.1:8080/public/custom-sets/${id}`, {
                 method: 'GET'
             }
         ).then((response) => response.json())
@@ -44,7 +45,7 @@ function CustomSet() {
                                      alt={''}></img>}
                         </div>
                         <div className={style.info}>
-                            <b className={style.creator}>Custom creator</b>
+                            <b className={style.creator}>{customSet?.creatorUsername}</b>
                             Added {customSet && customSet.creationDate}
                         </div>
                         <div className={style.votes}>

@@ -16,12 +16,12 @@ import java.util.UUID;
 public class CustomSetController {
     private final CustomSetService customSetService;
 
-    @GetMapping("/custom-sets")
+    @GetMapping("/public/custom-sets")
     public List<CustomSetDTO> getAllCustomSets() {
         return customSetService.getAllCustomSets();
     }
 
-    @GetMapping("/custom-sets/{customSetId}")
+    @GetMapping("/public/custom-sets/{customSetId}")
     public CustomSetDetailsDTO getCustomSetDetails(@PathVariable UUID customSetId) {
         return customSetService.getCustomSetDetails(customSetId);
     }

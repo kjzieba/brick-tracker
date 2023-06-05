@@ -15,6 +15,7 @@ public class CustomSetDetailsDTO {
     private byte[] instruction;
     private LocalDate creationDate;
     private PartDetailsDTO[] parts;
+    private String creatorUsername;
 
     public CustomSetDetailsDTO(CustomSet customSet) {
         this.customSetId = customSet.getCustomSetId();
@@ -23,5 +24,6 @@ public class CustomSetDetailsDTO {
         this.photo = customSet.getPhoto();
         this.instruction = customSet.getInstruction();
         this.creationDate = customSet.getCreationDate();
+        this.creatorUsername = customSet.getCreator().getUsername();
     }
 }

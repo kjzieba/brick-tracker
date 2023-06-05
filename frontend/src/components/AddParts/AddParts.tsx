@@ -14,10 +14,18 @@ const AddParts = (props: { closePopup: any, addPartsToList: any }) => {
     }
 
     async function verifyPartNumber(e: any) {
+        const token = localStorage.getItem("token");
+        if (token == null) {
+            return;
+        }
+
         partNumber = e.target.value;
 
         const exists = await fetch(`http://127.0.0.1:8080/part/${partNumber}`, {
-                method: "GET"
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                },
             }
         ).then((response) => response.json());
 
@@ -30,10 +38,18 @@ const AddParts = (props: { closePopup: any, addPartsToList: any }) => {
     }
 
     async function verifyColorAndPartNumber(e: any) {
+        const token = localStorage.getItem("token");
+        if (token == null) {
+            return;
+        }
+
         partColor = e.target.value;
 
         const data = await fetch(`http://127.0.0.1:8080/part/${partNumber}/${partColor}`, {
-                method: "GET"
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                },
             }
         ).then((response) => response.json());
 
@@ -48,10 +64,18 @@ const AddParts = (props: { closePopup: any, addPartsToList: any }) => {
     }
 
     async function addParts(e: any) {
+        const token = localStorage.getItem("token");
+        if (token == null) {
+            return;
+        }
+
         e.preventDefault()
         if (canAdd) {
             const part = await fetch(`http://127.0.0.1:8080/element/${elementId}`, {
-                    method: "GET"
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    },
                 }
             ).then((response) => response.json());
             part.quantity = quantity;

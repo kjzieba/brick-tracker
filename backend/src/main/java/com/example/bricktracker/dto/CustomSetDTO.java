@@ -12,11 +12,13 @@ public class CustomSetDTO {
     private String title;
     private byte[] photo;
     private LocalDate creationDate;
+    private String creatorUsername;
 
     public CustomSetDTO(CustomSet customSet) {
         this.customSetId = customSet.getCustomSetId();
         this.title = customSet.getTitle();
         this.photo = customSet.getPhoto();
         this.creationDate = customSet.getCreationDate();
+        this.creatorUsername = customSet.getCreator().getUsername();
     }
 }

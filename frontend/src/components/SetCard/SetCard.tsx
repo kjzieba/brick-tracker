@@ -7,7 +7,8 @@ interface SetCardProps {
     id: any,
     title: string,
     photo: any,
-    creationDate: string
+    creationDate: string,
+    creatorUsername: string
 }
 
 const SetCard = (props: SetCardProps) => {
@@ -35,7 +36,7 @@ const SetCard = (props: SetCardProps) => {
                         </div>
                     </div>
                     <div className={style.info}>
-                        <b>Creator</b>
+                        <b>{props.creatorUsername}</b>
                         <b>{props.creationDate}</b>
                     </div>
                 </div>

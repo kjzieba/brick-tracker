@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import InputBox from '../../components/InputBox/InputBox';
 import PartsList from '../../components/PartsList/PartsList';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import AddParts from '../../components/AddParts/AddParts';
 import {useNavigate} from 'react-router-dom';
 
@@ -55,6 +55,11 @@ function AddCustomSet() {
     };
 
     const addCustomSet = async () => {
+        const token = localStorage.getItem("token");
+        if (token == null) {
+            return;
+        }
+
         let formData = new FormData();
 
         formData.append("title", title);
@@ -72,12 +77,23 @@ function AddCustomSet() {
 
         await fetch('http://127.0.0.1:8080/custom-sets', {
                 method: 'POST',
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                },
                 body: formData
             }
         );
 
         navigate("/custom-sets");
     };
+
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            navigate("/login")
+        }
+    }, []);
 
     return (
         <>

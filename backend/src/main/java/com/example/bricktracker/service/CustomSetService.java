@@ -4,6 +4,7 @@ import com.example.bricktracker.dto.*;
 import com.example.bricktracker.model.CustomSet;
 import com.example.bricktracker.model.CustomSetParts;
 import com.example.bricktracker.model.Part;
+import com.example.bricktracker.model.User;
 import com.example.bricktracker.repository.CustomSetPartsRepository;
 import com.example.bricktracker.repository.CustomSetRepository;
 import com.example.bricktracker.repository.PartRepository;
@@ -23,6 +24,7 @@ public class CustomSetService {
     private final CustomSetRepository customSetRepository;
     private final CustomSetPartsRepository customSetPartsRepository;
     private final PartRepository partRepository;
+    private final AuthenticationService authenticationService;
 
     public List<CustomSetDTO> getAllCustomSets() {
         List<CustomSet> allCustomSets = customSetRepository.findAll();
@@ -45,6 +47,11 @@ public class CustomSetService {
     }
 
     public void addCustomSet(CustomSetRequest request) {
+        User user = authenticationService.getLoggedInUser();
+        if (user == null) {
+            return;
+        }
+
         ObjectMapper mapper = new ObjectMapper();
         PartRequest[] parts;
         try {
@@ -56,7 +63,7 @@ public class CustomSetService {
         CustomSet savedCustomSet;
         try {
             savedCustomSet = customSetRepository.save(new CustomSet(request.getTitle(), request.getDescription(),
-                    request.getPhoto().getBytes(), request.getInstruction().getBytes()));
+                    request.getPhoto().getBytes(), request.getInstruction().getBytes(), user));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

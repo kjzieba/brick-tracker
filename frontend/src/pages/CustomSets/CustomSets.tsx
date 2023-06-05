@@ -9,13 +9,14 @@ type CustomSet = {
     customSetId: string,
     title: string,
     photo: any,
-    creationDate: string
+    creationDate: string,
+    creatorUsername: string
 };
 
 function CustomSets() {
     const [customSetList, setCustomSetList] = useState<CustomSet[]>([]);
     useEffect(() => {
-        fetch('http://127.0.0.1:8080/custom-sets', {
+        fetch('http://127.0.0.1:8080/public/custom-sets', {
                 method: 'GET'
             }
         ).then((response) => response.json())
