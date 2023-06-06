@@ -6,6 +6,8 @@ import jakarta.persistence.IdClass;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Data
 @Entity
@@ -14,10 +16,12 @@ import lombok.NoArgsConstructor;
 public class CustomSetParts {
     @Id
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Part part;
 
     @Id
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private CustomSet customSet;
 
     private int quantity;

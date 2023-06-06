@@ -11,4 +11,6 @@ import java.util.UUID;
 @Repository
 public interface CustomSetPartsRepository extends JpaRepository<CustomSetParts, CustomSetPartsId> {
     ArrayList<CustomSetParts> findAllByCustomSetCustomSetId(UUID customSetId);
+
+    void deleteByCustomSetCustomSetId(UUID customSetID);
 }

@@ -10,6 +10,7 @@ import com.example.bricktracker.repository.CustomSetRepository;
 import com.example.bricktracker.repository.PartRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -74,5 +75,11 @@ public class CustomSetService {
             CustomSetParts customSetParts = new CustomSetParts(part, savedCustomSet, partRequest.getQuantity());
             customSetPartsRepository.save(customSetParts);
         }
+    }
+
+    @Transactional
+    public void deleteCustomSet(UUID customSetID) {
+        customSetPartsRepository.deleteByCustomSetCustomSetId(customSetID);
+        customSetRepository.deleteById(customSetID);
     }
 }

@@ -60,3 +60,30 @@
     text-decoration: none;
     color: black;
 }
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    background-color: #FFB703;
+    color: black;
+    border: 2px solid #FFB703;
+    border-radius: 0.3em;
+    padding: 0.5em 1.5em;
+    margin-top: 0.5em;
+    display: flex;
+    min-width: 6em;
+}
+
+.button:hover {
+    filter: brightness(90%);
+}
+
+.text {
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}

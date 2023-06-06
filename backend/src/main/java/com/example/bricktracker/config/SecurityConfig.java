@@ -23,6 +23,7 @@ public class SecurityConfig {
                 .cors().and()
                 .csrf().disable()
                 .authorizeHttpRequests().requestMatchers("/auth/**", "/public/**").permitAll()
+                .requestMatchers("/mod/**").hasAuthority("MODERATOR")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

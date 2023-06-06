@@ -30,4 +30,9 @@ public class CustomSetController {
     public void addCustomSet(@ModelAttribute CustomSetRequest request) {
         customSetService.addCustomSet(request);
     }
+
+    @DeleteMapping("/mod/custom-set/{customSetID}")
+    public void deleteCustomSet(@PathVariable UUID customSetID) {
+        customSetService.deleteCustomSet(customSetID);
+    }
 }
